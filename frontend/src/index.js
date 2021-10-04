@@ -12,9 +12,9 @@ import {Loading} from './components/loading.component';
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate loading={(<Loading />)} persistor={persistor}>
+      {/* <PersistGate loading={(<Loading />)} persistor={persistor}> */}
         <App />
-      </PersistGate>
+      {/* </PersistGate> */}
     </Provider>
     
   </React.StrictMode>,

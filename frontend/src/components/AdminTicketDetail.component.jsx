@@ -50,7 +50,7 @@ const AdminTicketDetail = ({ tickets }) => {
                         <h4 class="card-title mb-0">{tickets.title}</h4>
                         <div className="action-buttons"  style={{actionButonContainer}}>
 
-                            <Button size="small"  variant="contained">Reassign</Button>
+                            {/* <Button size="small"  variant="contained">Reassign</Button> */}
                             {/* <Button size="small"  variant="contained" color="primary">Unresolved</Button> */}
                             <Button size="small" onClick={() => {closeFunction(tickets._id)}} variant="contained" color="secondary">Close</Button>
                             <hr/>

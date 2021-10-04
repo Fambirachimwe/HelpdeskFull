@@ -28,9 +28,11 @@ const useStyles = makeStyles({
 });
 
 
-const TicketDetail = ({ tickets, user }) => {
+const TicketDetail = ({ tickets, adminReducer : {admin}, userReducer: {user} }) => {
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
+
+    console.log(user);
 
 
     
@@ -50,8 +52,11 @@ const TicketDetail = ({ tickets, user }) => {
                 <Typography variant="body2" component="p">
                     {}
                 <br />
-                {tickets.status === STATUS.PENDING ? (<span className="badge badge-warning">{tickets.status}</span>) : (<span className="badge badge-primary">{tickets.status}</span>) }
+                {/* {tickets.status === STATUS.PENDING ? (<span className="badge badge-warning">{tickets.status}</span>) : (<span className="badge badge-primary">{tickets.status}</span>) } */}
 
+                {tickets ? (
+                    tickets.status === STATUS.PENDING ?  ((<span className="badge badge-warning">{tickets.status}</span>)) : (<span className="badge badge-primary">{tickets.status}</span>)
+                ) : (null)}
                 
                 </Typography>
             </CardContent>

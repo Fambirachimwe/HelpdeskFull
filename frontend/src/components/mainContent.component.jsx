@@ -13,15 +13,18 @@ import AdminCards from "./AdminCards.component";
 
 const MainContent = ({ adminReducer : {admin}, userReducer: {user} }) =>{
 
+    // cons
+
     let USER;
 
-    if(admin){
+    if (admin) {
         USER = admin;
-        
+
     } else {
         USER = user;
-        
     }
+
+    
     
     return (
     <main className="content-wrapper">

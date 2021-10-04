@@ -23,6 +23,7 @@ const SideNav = ({ history, adminReducer: { admin }, userReducer: { user } }) =>
     return (
 
         <aside className="mdc-drawer mdc-drawer--dismissible mdc-drawer--open">
+            {console.log(USER)}
             <div className="mdc-drawer__header">
                 <Link to="/" className="brand-logo" style={styles}>
                     <h3>Doves Helpdesk </h3>
@@ -31,8 +32,8 @@ const SideNav = ({ history, adminReducer: { admin }, userReducer: { user } }) =>
             <div className="mdc-drawer__content">
                 <div className="user-info">
 
-                    <p className="name">{USER ? (USER.username) : (null)}</p>
-                    <p className="email">{USER ? (USER.email) : (null)}</p>
+                    <p className="name">{user ? (user.username) : (admin ? (admin.username) : null )}</p>
+                    <p className="email">{user ? (user.email) : (admin ? (admin.email) : null )}</p>
                 </div>
 
                 <div className="mdc-list-group">
@@ -56,12 +57,12 @@ const SideNav = ({ history, adminReducer: { admin }, userReducer: { user } }) =>
                                         </NavLink>
                                     </div>
 
-                                    <div className="mdc-list-item mdc-drawer-item">
+                                    {/* <div className="mdc-list-item mdc-drawer-item">
                                         <Link className="mdc-expansion-panel-link" to="/" data-toggle="expansionPanel" data-target="ui-sub-menu" >
                                             <i className="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true" > dashboard </i>
                                             Knowledge
                                         </Link>
-                                    </div>
+                                    </div> */}
 
                                 </div>
 
@@ -88,19 +89,19 @@ const SideNav = ({ history, adminReducer: { admin }, userReducer: { user } }) =>
                                         </NavLink>
                                         </div>
 
-                                        <div className="mdc-list-item mdc-drawer-item">
+                                        {/* <div className="mdc-list-item mdc-drawer-item">
                                             <NavLink className="mdc-drawer-link" to="/roles">
                                                 <i className="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true" > track_changes</i>
                                             Manage Roles
                                         </NavLink>
-                                        </div>
+                                        </div> */}
 
-                                        <div className="mdc-list-item mdc-drawer-item">
+                                        {/* <div className="mdc-list-item mdc-drawer-item">
                                             <NavLink className="mdc-drawer-link" to="/settings">
                                                 <i className="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">track_changes</i>
                                             Settings
                                         </NavLink>
-                                        </div>
+                                        </div> */}
 
                                     </div>
                                 )

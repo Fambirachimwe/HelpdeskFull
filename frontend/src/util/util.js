@@ -7,6 +7,7 @@ export const getToken = () => {
 
 export const LogOut = () => {
    localStorage.removeItem("token");
+   localStorage.removeItem("persist:root");
 }
 
 export const handleLogOut = () => {

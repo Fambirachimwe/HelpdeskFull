@@ -9,6 +9,8 @@ const TopHeader = ({click, handleClick, adminReducer : {admin}, userReducer: {us
 
     let USER;
 
+    console.log(admin, user)
+
     if(admin){
         USER = admin;
         
@@ -24,7 +26,7 @@ const TopHeader = ({click, handleClick, adminReducer : {admin}, userReducer: {us
                 <button className="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button sidebar-toggler">
                     menu
                       </button>
-            <span className="mdc-top-app-bar__title">Greetings {USER ? (USER.username) : (null)}!</span>
+            <span className="mdc-top-app-bar__title">Greetings {user ? (user.username) : (admin ? (admin.username) : null )}!</span>
                 <div className="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon search-text-field d-none d-md-flex">
                     <i className="material-icons mdc-text-field__icon">search</i>
                     <input
