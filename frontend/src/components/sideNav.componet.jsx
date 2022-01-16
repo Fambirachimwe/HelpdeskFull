@@ -23,7 +23,7 @@ const SideNav = ({ history, adminReducer: { admin }, userReducer: { user } }) =>
     return (
 
         <aside className="mdc-drawer mdc-drawer--dismissible mdc-drawer--open">
-            {console.log(USER)}
+            {/* {console.log(USER)} */}
             <div className="mdc-drawer__header">
                 <Link to="/" className="brand-logo" style={styles}>
                     <h3>ZOL Helpdesk </h3>
@@ -119,7 +119,12 @@ const SideNav = ({ history, adminReducer: { admin }, userReducer: { user } }) =>
                 <div className="profile-actions">
                     <Link to="#">Settings</Link>
                     <span className="divider"></span>
-                    <Link to="#" onClick={() => { handleLogOut(); history.push('/login') }}>Logout</Link>
+                    <Link to="#" onClick={() => {
+                        
+                         handleLogOut(); 
+                         history.push('/login')
+                         
+                    }}>Logout</Link>
                 </div>
             </div>
         </aside>

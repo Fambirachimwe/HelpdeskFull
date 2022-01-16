@@ -9,7 +9,7 @@ const TopHeader = ({click, handleClick, adminReducer : {admin}, userReducer: {us
 
     let USER;
 
-    console.log(admin, user)
+    // console.log(admin, user)
 
     if(admin){
         USER = admin;

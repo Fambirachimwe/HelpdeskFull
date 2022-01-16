@@ -11,8 +11,8 @@ export const LogOut = () => {
 }
 
 export const handleLogOut = () => {
-    window.localStorage.removeItem("token");
-    window.localStorage.removeItem("persist:root");
+    localStorage.removeItem("token");
+    localStorage.removeItem("persist:root");
 }
 
 export const verifyToken = () => {

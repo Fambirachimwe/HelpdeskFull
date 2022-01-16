@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 // import socketIOClient from "socket.io-client";
 import axios from 'axios';
 import { getToken, STATUS } from '../util/util';
-
+import {useQuery} from 'react-query';
 import FlipMove from 'react-flip-move';
 
 
@@ -33,9 +33,21 @@ const MyTickets = ({ userReducer: { tickets }, getTickets }) => {
     },
         [])
 
+    const fetchTickets =  () => {
+        const response =  axios.get("http://127.0.0.1:4000/app/mytickets", config);
+        return response
+    }
+
+
+    const { data, isLoading } = useQuery('tickets', fetchTickets);
+
 
     return (
         <div>
+
+            {
+                console.log(data)
+            }
             <div className="mdc-card p-0">
                 <h6 className="card-title card-padding pb-0">My Tickets</h6>
                 <div className="table-responsive">
@@ -56,13 +68,13 @@ const MyTickets = ({ userReducer: { tickets }, getTickets }) => {
 
                                 {
 
-                                    tickets !== undefined ? (
+                                    data ? (
 
                                         // insert flip move here 
 
                                         // <FlipMove></FlipMove>
 
-                                        tickets.map(ticket => (
+                                        data.data.tickets.map(ticket => (
 
                                             <tr key={ticket._id}>
                                                 <td className="text-left"> <Link to={`/${ticket._id}`}>{ticket._id}</Link></td>

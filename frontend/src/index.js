@@ -3,20 +3,28 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {store} from './stateManagement/store';
+import { store } from './stateManagement/store';
 // import { PersistGate } from 'redux-persist/integration/react';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 // import {Loading} from './components/loading.component';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query';
 
+const queryClient = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      {/* <PersistGate loading={(<Loading />)} persistor={persistor}> */}
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        {/* <PersistGate loading={(<Loading />)} persistor={persistor}> */}
         <App />
-      {/* </PersistGate> */}
-    </Provider>
-    
+        {/* </PersistGate> */}
+      </Provider>
+
+    </QueryClientProvider>
+
   </React.StrictMode>,
   document.getElementById('root')
 );

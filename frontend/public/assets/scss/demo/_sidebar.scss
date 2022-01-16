@@ -1,8 +1,8 @@
 /* Sidebar */
 
 .mdc-drawer {
-  background: linear-gradient(#2a1c5a, #4b3a6e);
-  background: url(../../images/sidebar/sidebar-bg.jpg);
+  background: linear-gradient(#feab00, #d18c02);
+  // background: url(../../images/sidebar/sidebar-bg.jpg);
   position: fixed;
   &--open,
   &__drawer {
@@ -126,7 +126,7 @@
       margin: $mdc-drawer-list-item-margin;
       margin-right: 27px;
       margin-bottom: 50px;
-      background: #5458e1;
+      background: #feab00;
       color: #fff;
       padding: 25px;
       p {
