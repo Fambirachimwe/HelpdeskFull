@@ -6,9 +6,9 @@ import './adminTicket.css';
 import Attachment from './Attachment';
 import { STATUS, getToken } from '../util/util';
 
-import socketIOClient from "socket.io-client";
-const endpoint = "http://127.0.0.1:4000";
-const socket = socketIOClient(endpoint);
+// import socketIOClient from "socket.io-client";
+// const endpoint = "http://127.0.0.1:4000";
+// const socket = socketIOClient(endpoint);
 
 const actionButonContainer = {
     "display": "inline-block",
@@ -31,8 +31,8 @@ const token = getToken();
 
 const closeFunction = (ticketId, status=STATUS.CLOSED) => {
     axios.put("http://127.0.0.1:4000/app/ticket", {id: ticketId, status: status}).then(data => {
-        // console.log(data)
-        socket.emit("update", token);
+        console.log(data)
+        // socket.emit("update", token);
     });
 }
 

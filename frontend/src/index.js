@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {store, persistor} from './stateManagement/store';
-import { PersistGate } from 'redux-persist/integration/react';
+import {store} from './stateManagement/store';
+// import { PersistGate } from 'redux-persist/integration/react';
 import {Provider} from 'react-redux';
-import {Loading} from './components/loading.component';
+// import {Loading} from './components/loading.component';
 
 
 ReactDOM.render(

@@ -32,10 +32,8 @@ const TicketDetail = ({ tickets, adminReducer : {admin}, userReducer: {user} }) 
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
 
-    console.log(user);
+    // console.log(user);
 
-
-    
 
     return (
         <Card className={classes.root}>

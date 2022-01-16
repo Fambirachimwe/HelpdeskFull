@@ -24,7 +24,7 @@ const LoginPage = (props) => {
         event.preventDefault();
         axios.post('http://127.0.0.1:4000/user/login', { username, password }).then(data => {
             if(data.data) {
-                // console.log(data.data.user);
+                console.log(data.data.user);
 
                 // dispatch user to the redux state
 

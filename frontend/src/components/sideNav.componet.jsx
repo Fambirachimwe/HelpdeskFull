@@ -26,7 +26,7 @@ const SideNav = ({ history, adminReducer: { admin }, userReducer: { user } }) =>
             {console.log(USER)}
             <div className="mdc-drawer__header">
                 <Link to="/" className="brand-logo" style={styles}>
-                    <h3>Doves Helpdesk </h3>
+                    <h3>ZOL Helpdesk </h3>
                 </Link>
             </div>
             <div className="mdc-drawer__content">

@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import {STATUS, getToken} from "../util/util"
 // socket io client 
-import socketIOClient from "socket.io-client";
+// import socketIOClient from "socket.io-client";
 import axios from 'axios';
 import FlipMove from 'react-flip-move';
 
 
-const endpoint = "http://127.0.0.1:4000";
-const socket = socketIOClient(endpoint);
+// const endpoint = "http://127.0.0.1:4000";
+// const socket = socketIOClient(endpoint);
 
 
 
@@ -27,8 +27,8 @@ const AdminPool = ({ adminReducer: {tickets}, getTickets, history, updateState }
               }
             // send an api request to the backend to update the ticket status in the database
             axios.put("http://127.0.0.1:4000/app/tickets", {id: ticketId}).then(data => {
-                // console.log(data)
-                socket.emit("update", token);
+                console.log(data)
+                // socket.emit("update", token);?
 
                 
             });
@@ -45,11 +45,11 @@ const AdminPool = ({ adminReducer: {tickets}, getTickets, history, updateState }
     //     console.log(dt)
     // });
 
-    socket.on("update_confirm", (dt) => {
-        getTickets(dt);  // dipatch the new state to the store
-        updateState(dt);
-        // console.log('update confirm')
-    })
+    // socket.on("update_confirm", (dt) => {
+    //     getTickets(dt);  // dipatch the new state to the store
+    //     updateState(dt);
+    //     // console.log('update confirm')
+    // })
 
     return (
         <div style={{ marginTop: "20px" }}>

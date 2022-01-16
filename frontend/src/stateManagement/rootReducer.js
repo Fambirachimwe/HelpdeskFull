@@ -40,8 +40,8 @@ const userReducer = (state=userInitState, action) => {
 
         case "LOGOUT": 
             return {
-                ...state,
-                isAuth: action.isAuth
+                ...userInitState,
+                // isAuth: action.isAuth
             }
 
         case "USER_GET_USER_TICKETS": 
@@ -137,7 +137,9 @@ const rootReducer = combineReducers({
 
 
 
-export const pReducer = persistReducer(persistConfig ,rootReducer);
+// export const pReducer = persistReducer(persistConfig ,rootReducer);
 
+
+export const pReducer =  rootReducer ;
 
 
