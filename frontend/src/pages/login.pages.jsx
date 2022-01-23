@@ -59,6 +59,7 @@ const LoginPage = (props) => {
                       <div className="stretch-card mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-1-tablet"></div>
                       <div className="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-6-tablet">
                         <div className="mdc-card">
+                          <h3>Login</h3>
                           <form onSubmit={handleSubmit}>
                             <div className="mdc-layout-grid">
                               <div className="mdc-layout-grid__inner">
