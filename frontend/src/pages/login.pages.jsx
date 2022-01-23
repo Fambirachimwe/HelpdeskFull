@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import axios from 'axios';
+import Swal from 'sweetalert2'
 
 
 
@@ -43,6 +44,13 @@ const LoginPage = (props) => {
                 
             }
     
+        }).catch(err => {
+          Swal.fire({
+            icon: 'warining',
+            title: 'Login Failure',
+            text: `Email or Password is incorrect`,
+            
+        })
         });
 
     }

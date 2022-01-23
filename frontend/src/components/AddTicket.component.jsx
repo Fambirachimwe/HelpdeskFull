@@ -26,7 +26,7 @@ const AddTicket = (props) => {
     const handleAttachment = (evt) => {
         setAttachment(evt.target.files[0]);
 
-        
+
     }
 
     const mutation = useMutation(formData => {
@@ -40,7 +40,10 @@ const AddTicket = (props) => {
                 "X-Auth-Token": localStorage.getItem("token")
             }
         })
-    })
+    },
+        
+    
+    )
 
     const handleSubmit = (evt) => {
 
@@ -53,27 +56,38 @@ const AddTicket = (props) => {
         formData.append("attachment", attachment)
 
 
-        
+
 
 
 
         mutation.mutate(formData, {
             onSuccess: () => {
+
                 queryClient.invalidateQueries('tickets');
                 queryClient.invalidateQueries('allTickets')
-                
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Ticket Added',
+                    text: `The admin will resolve your issue`,
+
+                });
+            },
+            onError: () => {
+                // queryClient.invalidateQueries('vehicles')
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Error adding ticket',
+                    text: `Please check your details `,
+
+                });
             }
+
+        }).then(() => {
+            setTitle("");
+            setDescription("")
         });
-        alert('ticket added sucessfully ');
-        setTitle("");
-        setDescription("")
-
-     
-
+        
     }
-
-
-    
 
     return (
         <div>
